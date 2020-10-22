@@ -1,13 +1,5 @@
 public class CollatzSequence {
 
-  public boolean isEven() {
-    return false;
-  }
-
-  public static boolean isOdd() {
-    return !isEven();
-  }
-
   public static void main(String[] args) {
     if (args.length == 0) {
       System.out.println("Insufficient arguments");
