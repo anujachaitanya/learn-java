@@ -1,19 +1,19 @@
 public class GcdAndLcm {
 
-  public static int gcd(int firstNumber, int secondNumber) {
+  public static int gcd(int firstNum, int secondNum) {
     int result = 1;
-    int max = Math.max(firstNumber, secondNumber);
+    int max = Math.max(firstNum, secondNum);
 
-    for (int i = 1; i <= max; i++) {
-      if (firstNumber % i == 0 && secondNumber % i == 0) {
-        result = i;
+    for (int currentNum = 1; currentNum <= max; currentNum++) {
+      if (firstNum % currentNum == 0 && secondNum % currentNum == 0) {
+        result = currentNum;
       }
     }
     return result;
   }
 
-  public static int lcm(int firstNumber, int secondNumber) {
-    int lcm = (firstNumber * secondNumber) / gcd(firstNumber, secondNumber);
+  public static int lcm(int firstNum, int secondNum) {
+    int lcm = (firstNum * secondNum) / gcd(firstNum, secondNum);
     return lcm;
   }
 
@@ -22,10 +22,10 @@ public class GcdAndLcm {
       System.out.println("Insufficient arguments");
       return;
     }
-    int firstNumber = Integer.parseInt(args[0]);
-    int secondNumber = Integer.parseInt(args[1]);
+    int firstNum = Integer.parseInt(args[0]);
+    int secondNum = Integer.parseInt(args[1]);
 
-    System.out.println("GCD is " + gcd(firstNumber, secondNumber));
-    System.out.println("LCM is " + lcm(firstNumber, secondNumber));
+    System.out.println("GCD is " + gcd(firstNum, secondNum));
+    System.out.println("LCM is " + lcm(firstNum, secondNum));
   }
 }
