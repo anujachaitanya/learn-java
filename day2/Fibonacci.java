@@ -1,10 +1,22 @@
 public class Fibonacci {
 
-  public static int fibonacci(int term) {
-    if (term <= 1) {
-      return term;
+  public static void printFibonacci(int limit, int currentTerm, int nextTerm) {
+    if (limit == 0) {
+      return;
     }
-    return fibonacci(term - 1) + fibonacci(term - 2);
+
+    System.out.println(currentTerm);
+    printFibonacci(limit - 1, nextTerm, nextTerm + currentTerm);
+  }
+
+  public static void fibonacci(int noOfTerms) {
+    int current = 0, next = 1;
+
+    for (int i = 0; i < noOfTerms; i++) {
+      System.out.println(current);
+      next = current + next;
+      current = next - current;
+    }
   }
 
   public static void main(String[] args) {
@@ -14,9 +26,7 @@ public class Fibonacci {
     }
 
     int noOfTerms = Integer.parseInt(args[0]);
-
-    for (int term = 0; term < noOfTerms; term++) {
-      System.out.println(fibonacci(term));
-    }
+    printFibonacci(noOfTerms, 0, 1);
+    fibonacci(noOfTerms);
   }
 }
