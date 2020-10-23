@@ -1,10 +1,18 @@
 public class Factorial {
 
-  public static int fact(int number) {
+  public static int factorialWithRecursion(int number) {
     if (number == 1) {
       return number;
     }
-    return number * fact(number - 1);
+    return number * factorial(number - 1);
+  }
+
+  public static int factorial(int number) {
+    int fact = 1;
+    for (int i = 1; i <= number; i++) {
+      fact = fact * i;
+    }
+    return fact;
   }
 
   public static void main(String[] args) {
@@ -14,6 +22,7 @@ public class Factorial {
     }
 
     int number = Integer.parseInt(args[0]);
-    System.out.println(fact(number));
+    System.out.println(factorial(number));
+    System.out.println(factorialWithRecursion(number));
   }
 }
