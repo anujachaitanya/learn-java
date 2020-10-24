@@ -90,6 +90,6 @@ public class Numbers {
     System.out.println(isAscending(numbers));
     System.out.println(isAscending(range(1, 5)));
 
-    printArray(concat(range(1, 5), range(5, 0, -1)));
+    printArray(concat(range(1, 5), repeat(5, 2)));
   }
 }
