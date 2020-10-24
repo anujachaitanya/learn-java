@@ -42,12 +42,12 @@ public class Numbers {
     return true;
   }
 
-  public static int[] concatenate(int[] array1, int[] array2) {
+  public static int[] concat(int[] array1, int[] array2) {
     int[] newArray = new int[array1.length + array2.length];
 
     for (int index = 0; index < newArray.length; index++) {
-      if(index < array1.length) {
-        newArray[index] = array1[index]
+      if (index < array1.length) {
+        newArray[index] = array1[index];
       } else {
         newArray[index] = array2[index - array1.length];
       }
@@ -73,10 +73,23 @@ public class Numbers {
   }
 
   public static void main(String[] args) {
-    int[] array = repeat(3, 4);
-    int[] a = { 1, 2, 3, 4 };
-    printArray(array);
-    System.out.println(findLargest(a));
-    System.out.println(average(a));
+    printArray(range(1, 5));
+    printArray(range(1, 10, 2));
+    printArray(range(5, 1, -1));
+
+    printArray(repeat(5, 4));
+    printArray(repeat(3, 6));
+
+    System.out.println(findLargest(range(1, 5)));
+    System.out.println(findLargest(range(10, 5, -1)));
+
+    System.out.println(average(range(1, 5)));
+    System.out.println(average(range(1, 10, 2)));
+
+    int[] numbers = { 1, 1, 3 };
+    System.out.println(isAscending(numbers));
+    System.out.println(isAscending(range(1, 5)));
+
+    printArray(concat(range(1, 5), range(5, 0, -1)));
   }
 }
